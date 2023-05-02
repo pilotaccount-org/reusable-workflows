@@ -6,7 +6,7 @@ on:
 jobs:
 
   download-artifact:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: download-artifact
@@ -14,7 +14,7 @@ jobs:
       run: echo "Download Artifact"
 
   get-workflow-credentials:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-workflow-credentials
@@ -23,7 +23,7 @@ jobs:
 
 
   get-jdk:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-jdk
@@ -32,7 +32,7 @@ jobs:
 
 
   setup-sast-tool:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: setup-sast-tool
@@ -41,7 +41,7 @@ jobs:
 
 
   sast-scan:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: unit-test
@@ -50,7 +50,7 @@ jobs:
 
   
   emit-sast-scan-event:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: emit-sast-scan-event
