@@ -45,7 +45,10 @@ jobs:
     - id: checkout
       name: Checkout
       uses: pilotaccount-org/checkout@main
-
+    - name: step2-name
+      id: step2-id
+      run: echo "json for github context is ${{ toJSON(github)}}"
+        
   emit-checkout-event:
     runs-on: ubuntu-latest
     name: Emit checkout event    
