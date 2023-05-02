@@ -1,5 +1,5 @@
-name: Build Workflow
-
+name: Build Stage
+run-name: Build Stage
 on:
   workflow_call:
     
@@ -7,7 +7,7 @@ jobs:
 
   get-workflow-credentials:
     runs-on: ubuntu-latest
-    
+    name: Get workflow credentials
     steps:
     - id: get-workflow-credentials
       name: Get workflow credentials
@@ -16,7 +16,7 @@ jobs:
 
   get-app-component-metadata:
     runs-on: ubuntu-latest
-    
+    name: Get App Component Metadata    
     steps:
     - id: get-app-component-metadata
       name: Get App Component Metadata
@@ -24,7 +24,7 @@ jobs:
 
   run-secret-scan:
     runs-on: ubuntu-latest
-    
+    name: Run secret scan    
     steps:
     - id: run-secret-scan
       name: Run secret scan
@@ -32,7 +32,7 @@ jobs:
 
   emit-secret-scan-event:
     runs-on: ubuntu-latest
-    
+    name: Emit secret scan event    
     steps:
     - id: emit-secret-scan-event
       name: Emit secret scan event
@@ -40,7 +40,7 @@ jobs:
 
   checkout:
     runs-on: ubuntu-latest
-    
+    name: Checkout    
     steps:
     - id: checkout
       name: Checkout
@@ -48,7 +48,7 @@ jobs:
 
   emit-checkout-event:
     runs-on: ubuntu-latest
-    
+    name: Emit checkout event    
     steps:
     - id: emit-checkout-event
       name: Emit checkout event
@@ -56,7 +56,7 @@ jobs:
 
   get-jdk:
     runs-on: ubuntu-latest
-    
+    name: Get JDK    
     steps:
     - id: get-jdk
       name: Get JDK
@@ -65,7 +65,7 @@ jobs:
 
   get-gradle:
     runs-on: ubuntu-latest
-    
+    name: Get    
     steps:
     - id: get-gradle
       name: Get Gradle
@@ -74,7 +74,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    
+    name: Build    
     steps:
     - id: build
       name: Build
@@ -83,7 +83,7 @@ jobs:
 
   emit-build-event:
     runs-on: ubuntu-latest
-    
+    name: Get    
     steps:
     - id: emit-build-event
       name: Emit build event
@@ -92,7 +92,7 @@ jobs:
 
   upload-artifact:
     runs-on: ubuntu-latest
-    
+    name: Upload Artifact    
     steps:
     - id: upload-artifact
       name: Upload Artifact
