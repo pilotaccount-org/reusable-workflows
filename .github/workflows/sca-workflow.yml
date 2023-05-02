@@ -1,0 +1,50 @@
+name: SCA Workflow
+
+on:
+  workflow_call:
+    
+jobs:
+
+  download-artifact:
+    runs-on: linux
+    
+    steps:
+    - id: download-artifact
+      name: Download Artifact
+      run: echo "Download Artifact"
+
+  get-workflow-credentials:
+    runs-on: linux
+    
+    steps:
+    - id: get-workflow-credentials
+      name: Get workflow credentials
+      run: echo "Getting workflow credentials"
+
+
+  setup-sca-tool:
+    runs-on: linux
+    
+    steps:
+    - id: setup-sca-tool
+      name: Set-up SCA Tool
+      run: echo "Set-up SCA Tool"
+
+
+  sca-scan:
+    runs-on: linux
+    
+    steps:
+    - id: sca-scan
+      name: SCA Scan
+      run: echo "Run SCA Scan"
+
+  
+  emit-sca-scan-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-sca-scan-event
+      name: Emit sca scan event
+      run: echo "Emit sca scan event"
+
