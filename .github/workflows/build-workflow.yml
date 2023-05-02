@@ -1,0 +1,101 @@
+name: Build Workflow
+
+on:
+  workflow_call:
+    
+jobs:
+
+  get-workflow-credentials:
+    runs-on: linux
+    
+    steps:
+    - id: get-workflow-credentials
+      name: Get workflow credentials
+      run: echo "Getting workflow credentials"
+
+
+  get-app-component-metadata:
+    runs-on: linux
+    
+    steps:
+    - id: get-app-component-metadata
+      name: Get App Component Metadata
+      run: echo "Get App Component Metadata"
+
+  run-secret-scan:
+    runs-on: linux
+    
+    steps:
+    - id: run-secret-scan
+      name: Run secret scan
+      run: echo "Run secret scan"
+
+  emit-secret-scan-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-secret-scan-event
+      name: Emit secret scan event
+      run: echo "Emit secret scan event"
+
+  checkout:
+    runs-on: linux
+    
+    steps:
+    - id: checkout
+      name: Checkout
+      run: echo "Checkout"
+
+  emit-checkout-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-checkout-event
+      name: Emit checkout event
+      run: echo "Emit checkout event"
+
+  get-jdk:
+    runs-on: linux
+    
+    steps:
+    - id: get-jdk
+      name: Get JDK
+      run: echo "Get JDK"
+
+
+  get-gradle:
+    runs-on: linux
+    
+    steps:
+    - id: get-gradle
+      name: Get Gradle
+      run: echo "Get Gradle"
+
+
+  build:
+    runs-on: linux
+    
+    steps:
+    - id: build
+      name: Build
+      run: echo "Build"
+
+
+  emit-build-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-build-event
+      name: Emit build event
+      run: echo "Emit build event"
+
+
+  upload-artifact:
+    runs-on: linux
+    
+    steps:
+    - id: upload-artifact
+      name: Upload Artifact
+      run: echo "Upload Artifact"
+
+
