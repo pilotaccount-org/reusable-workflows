@@ -44,7 +44,7 @@ jobs:
     steps:
     - id: checkout
       name: Checkout
-      run: echo "Checkout"
+      uses: pilotaccount-org/checkout@main
 
   emit-checkout-event:
     runs-on: ubuntu-latest
