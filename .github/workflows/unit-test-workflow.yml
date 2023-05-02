@@ -1,0 +1,59 @@
+name: Unit Test Workflow
+
+on:
+  workflow_call:
+    
+jobs:
+
+  download-artifact:
+    runs-on: linux
+    
+    steps:
+    - id: download-artifact
+      name: Download Artifact
+      run: echo "Download Artifact"
+
+  get-workflow-credentials:
+    runs-on: linux
+    
+    steps:
+    - id: get-workflow-credentials
+      name: Get workflow credentials
+      run: echo "Getting workflow credentials"
+
+
+  get-jdk:
+    runs-on: linux
+    
+    steps:
+    - id: get-jdk
+      name: Get JDK
+      run: echo "Get JDK"
+
+
+  get-gradle:
+    runs-on: linux
+    
+    steps:
+    - id: get-gradle
+      name: Get Gradle
+      run: echo "Get Gradle"
+
+
+  unit-test:
+    runs-on: linux
+    
+    steps:
+    - id: unit-test
+      name: Unit Test
+      run: echo "Run Unit Test"
+
+  
+  emit-unit-test-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-unit-test-event
+      name: Emit unit test event
+      run: echo "Emit unit test event"
+
