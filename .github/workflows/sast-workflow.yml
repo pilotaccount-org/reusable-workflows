@@ -1,0 +1,59 @@
+name: SAST Workflow
+
+on:
+  workflow_call:
+    
+jobs:
+
+  download-artifact:
+    runs-on: linux
+    
+    steps:
+    - id: download-artifact
+      name: Download Artifact
+      run: echo "Download Artifact"
+
+  get-workflow-credentials:
+    runs-on: linux
+    
+    steps:
+    - id: get-workflow-credentials
+      name: Get workflow credentials
+      run: echo "Getting workflow credentials"
+
+
+  get-jdk:
+    runs-on: linux
+    
+    steps:
+    - id: get-jdk
+      name: Get JDK
+      run: echo "Get JDK"
+
+
+  setup-sast-tool:
+    runs-on: linux
+    
+    steps:
+    - id: setup-sast-tool
+      name: Set-up SAST Tool
+      run: echo "Set-up SAST Tool"
+
+
+  sast-scan:
+    runs-on: linux
+    
+    steps:
+    - id: unit-test
+      name: Unit Test
+      run: echo "Run Unit Test"
+
+  
+  emit-sast-scan-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-sast-scan-event
+      name: Emit sast scan event
+      run: echo "Emit sast scan event"
+
