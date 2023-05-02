@@ -1,5 +1,5 @@
-name: Release Workflow
-run-name: Release Workflow
+name: Release Reusable Workflow
+run-name: Release Reusable Workflow
 on:
   workflow_call:
 
