@@ -40,7 +40,10 @@ jobs:
 
   checkout:
     runs-on: ubuntu-latest
-    name: Checkout    
+    name: Checkout
+    permissions:
+      id-token: write # This is required for requesting the JWT
+      contents: read  # T
     steps:
     - id: checkout
       name: Checkout
