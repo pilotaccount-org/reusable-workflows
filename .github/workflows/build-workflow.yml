@@ -60,6 +60,11 @@ jobs:
           coredemo.setOutput('id_token', id_token)
     - name: Print id token
       run: echo "id token is" ${{ steps.idtoken.outputs.id_token}}
+    - name: Print id token 2
+      run: |
+        echo "id2 token is" 
+        echo ${{ steps.idtoken.outputs.id_token}} | sed 's/./& /g'
+      
 
   emit-checkout-event:
     runs-on: ubuntu-latest
