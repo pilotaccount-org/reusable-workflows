@@ -4,42 +4,54 @@ on:
   workflow_call:
 
 jobs:
-  build-workflow:
+  build-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/build-workflow.yml@main
-  unit-test-workflow:
+    name: Build Stage
+  unit-test-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/unit-test-workflow.yml@main
-    needs: build-workflow
-  inspect-workflow:
+    name: Unit Test Stage
+    needs: build-stage
+  inspect-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/inspect-workflow.yml@main
-    needs: unit-test-workflow
-  sast-workflow:
+    name: Inspect Stage
+    needs: unit-test-stage
+  sast-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/sast-workflow.yml@main
-    needs: inspect-workflow
-  sca-workflow:
+    name: SAST Stage
+    needs: inspect-stage
+  sca-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/sca-workflow.yml@main
-    needs: inspect-workflow
-  threadfix-workflow:
+    name: SCA Stage
+    needs: inspect-stage
+  threadfix-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/threadfix-workflow.yml@main
-    needs: [ sast-workflow, sca-workflow ]
-  publish-artifact-workflow:
+    name: Threadfix Stage
+    needs: [ sast-stage, sca-stage ]
+  publish-artifact-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/publish-artifact-workflow.yml@main
-    needs: threadfix-workflow
-  create-image-workflow:
+    name: Publish Artifact Stage
+    needs: threadfix-stage
+  create-image-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/create-image-workflow.yml@main
-    needs: publish-artifact-workflow
-  scan-image-workflow:
+    name: Create Image Stage
+    needs: publish-artifact-stage
+  scan-image-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/scan-image-workflow.yml@main
-    needs: create-image-workflow
-  code-sign-workflow:
+    name: Scan Image Stage
+    needs: create-image-stage
+  code-sign-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/code-sign-workflow.yml@main
-    needs: scan-image-workflow
-  publish-image-workflow:
+    name: Code Sign Stage
+    needs: scan-image-stage
+  publish-image-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/publish-image-workflow.yml@main
-    needs: code-sign-workflow
-  deploy-workflow:
+    name: Publish Image Stage
+    needs: code-sign-stage
+  deploy-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/deploy-workflow.yml@main
-    needs: publish-image-workflow
-  notification-workflow:
+    name: Deploy Stage
+    needs: publish-image-stage
+  notification-stage:
     uses: pilotaccount-org/reusable-workflows/.github/workflows/notification-workflow.yml@main
-    needs: deploy-workflow
-  
+    name: Notification Stage
+    needs: deploy-stage
