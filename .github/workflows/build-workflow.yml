@@ -6,7 +6,7 @@ on:
 jobs:
 
   get-workflow-credentials:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-workflow-credentials
@@ -15,7 +15,7 @@ jobs:
 
 
   get-app-component-metadata:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-app-component-metadata
@@ -23,7 +23,7 @@ jobs:
       run: echo "Get App Component Metadata"
 
   run-secret-scan:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: run-secret-scan
@@ -31,7 +31,7 @@ jobs:
       run: echo "Run secret scan"
 
   emit-secret-scan-event:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: emit-secret-scan-event
@@ -39,7 +39,7 @@ jobs:
       run: echo "Emit secret scan event"
 
   checkout:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: checkout
@@ -47,7 +47,7 @@ jobs:
       run: echo "Checkout"
 
   emit-checkout-event:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: emit-checkout-event
@@ -55,7 +55,7 @@ jobs:
       run: echo "Emit checkout event"
 
   get-jdk:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-jdk
@@ -64,7 +64,7 @@ jobs:
 
 
   get-gradle:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: get-gradle
@@ -73,7 +73,7 @@ jobs:
 
 
   build:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: build
@@ -82,7 +82,7 @@ jobs:
 
 
   emit-build-event:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: emit-build-event
@@ -91,7 +91,7 @@ jobs:
 
 
   upload-artifact:
-    runs-on: linux
+    runs-on: ubuntu-latest
     
     steps:
     - id: upload-artifact
