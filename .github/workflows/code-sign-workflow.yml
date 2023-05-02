@@ -1,4 +1,5 @@
-name: Threadfix Workflow
+name: Threadfix Stage
+run-name: Threadfix Stage
 
 on:
   workflow_call:
@@ -7,7 +8,7 @@ jobs:
 
   download-artifact:
     runs-on: ubuntu-latest
-    
+    name: Download Artifact
     steps:
     - id: download-artifact
       name: Download Artifact
@@ -15,6 +16,7 @@ jobs:
 
   get-workflow-credentials:
     runs-on: ubuntu-latest
+    name: Get workflow credentials
     
     steps:
     - id: get-workflow-credentials
@@ -24,6 +26,7 @@ jobs:
 
   setup-inspect-tool:
     runs-on: ubuntu-latest
+    name: Set-up Inspect Tool
     
     steps:
     - id: setup-inspect-tool
@@ -33,6 +36,7 @@ jobs:
 
   inspect:
     runs-on: ubuntu-latest
+    name: Inspect
     
     steps:
     - id: inspect
@@ -42,6 +46,7 @@ jobs:
   
   emit-inspect-event:
     runs-on: ubuntu-latest
+    name: Emit inspect event
     
     steps:
     - id: emit-inspect-event
