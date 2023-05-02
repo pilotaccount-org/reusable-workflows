@@ -1,0 +1,50 @@
+name: Inspect Workflow
+
+on:
+  workflow_call:
+    
+jobs:
+
+  download-artifact:
+    runs-on: linux
+    
+    steps:
+    - id: download-artifact
+      name: Download Artifact
+      run: echo "Download Artifact"
+
+  get-workflow-credentials:
+    runs-on: linux
+    
+    steps:
+    - id: get-workflow-credentials
+      name: Get workflow credentials
+      run: echo "Getting workflow credentials"
+
+
+  setup-inspect-tool:
+    runs-on: linux
+    
+    steps:
+    - id: setup-inspect-tool
+      name: Set-up Inspect Tool
+      run: echo "Set-up Inspect Tool"
+
+
+  inspect:
+    runs-on: linux
+    
+    steps:
+    - id: inspect
+      name: Inspect
+      run: echo "Run Inspect"
+
+  
+  emit-inspect-event:
+    runs-on: linux
+    
+    steps:
+    - id: emit-inspect-event
+      name: Emit inspect event
+      run: echo "Emit inspect event"
+
